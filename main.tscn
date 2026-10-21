@@ -4,9 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://5lvpu0hd1b4f" path="res://Sprites/Warrior/Individual Sprite/idle/Warrior_Idle_1.png" id="2_272bh"]
 [ext_resource type="Texture2D" uid="uid://bsadts48hdyb7" path="res://Sprites/Warrior/Individual Sprite/Fall/Warrior_Fall_1.png" id="2_d13ii"]
 [ext_resource type="Texture2D" uid="uid://b6ojjqn5jtow0" path="res://Sprites/Warrior/Individual Sprite/Dash/Warrior_Dash_1.png" id="2_kq58d"]
-[ext_resource type="Script" uid="uid://cdsrc0ttna86t" path="res://character_body_2d.gd" id="2_seu75"]
+[ext_resource type="Script" uid="uid://ga4wbmy524ks" path="res://Scripts/StateMachine.gd" id="2_seu75"]
 [ext_resource type="Texture2D" uid="uid://08akfyslkwtn" path="res://Sprites/Warrior/Individual Sprite/Fall/Warrior_Fall_2.png" id="3_1u8w0"]
 [ext_resource type="Texture2D" uid="uid://bw6dubkt4g28r" path="res://Sprites/Warrior/Individual Sprite/idle/Warrior_Idle_2.png" id="3_5vw27"]
+[ext_resource type="Script" uid="uid://bs6gn4j5v0dh7" path="res://Scripts/State.gd" id="3_htxhm"]
 [ext_resource type="Texture2D" uid="uid://mekh1n4dn35" path="res://Sprites/Warrior/Individual Sprite/Dash/Warrior_Dash_2.png" id="3_seu75"]
 [ext_resource type="Texture2D" uid="uid://dxxnghhn7bivq" path="res://Sprites/Warrior/Individual Sprite/Fall/Warrior_Fall_3.png" id="4_0odxb"]
 [ext_resource type="Texture2D" uid="uid://beequ5bugsqyg" path="res://Sprites/Warrior/Individual Sprite/Dash/Warrior_Dash_3.png" id="4_htxhm"]
@@ -368,6 +369,7 @@ tile_set = SubResource("TileSet_g4v7s")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=320301276]
 script = ExtResource("2_seu75")
+states = Array[ExtResource("3_htxhm")]([null])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1858171117]
 position = Vector2(0, -17)

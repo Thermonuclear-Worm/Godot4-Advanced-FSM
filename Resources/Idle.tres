@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="StateIdle" format=3 uid="uid://bm08tapsnhlta"]
+
+[ext_resource type="Script" uid="uid://dxoye1i0qa5pa" path="res://Scripts/StateIdle.gd" id="1_faxal"]
+
+[resource]
+script = ExtResource("1_faxal")
+metadata/_custom_type_script = "uid://dxoye1i0qa5pa"
