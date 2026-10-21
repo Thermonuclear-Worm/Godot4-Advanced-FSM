@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="StateDash" format=3 uid="uid://da3od85xx6dmp"]
+
+[ext_resource type="Script" uid="uid://bsnphyuho00jx" path="res://Scripts/StateDash.gd" id="1_vbmcq"]
+
+[resource]
+script = ExtResource("1_vbmcq")
+metadata/_custom_type_script = "uid://bsnphyuho00jx"

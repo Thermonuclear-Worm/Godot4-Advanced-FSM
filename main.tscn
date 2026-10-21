@@ -10,10 +10,13 @@
 [ext_resource type="Script" uid="uid://bs6gn4j5v0dh7" path="res://Scripts/State.gd" id="3_htxhm"]
 [ext_resource type="Texture2D" uid="uid://mekh1n4dn35" path="res://Sprites/Warrior/Individual Sprite/Dash/Warrior_Dash_2.png" id="3_seu75"]
 [ext_resource type="Texture2D" uid="uid://dxxnghhn7bivq" path="res://Sprites/Warrior/Individual Sprite/Fall/Warrior_Fall_3.png" id="4_0odxb"]
+[ext_resource type="Resource" uid="uid://bm08tapsnhlta" path="res://Resources/Idle.tres" id="4_4k2k6"]
 [ext_resource type="Texture2D" uid="uid://beequ5bugsqyg" path="res://Sprites/Warrior/Individual Sprite/Dash/Warrior_Dash_3.png" id="4_htxhm"]
 [ext_resource type="Texture2D" uid="uid://dvrc2jhw461fk" path="res://Sprites/Warrior/Individual Sprite/idle/Warrior_Idle_3.png" id="4_kek77"]
+[ext_resource type="Resource" uid="uid://b6cw6xtl3odmx" path="res://Resources/Jump.tres" id="5_0rl1p"]
 [ext_resource type="Texture2D" uid="uid://bq4rxyclgl1ld" path="res://Sprites/Warrior/Individual Sprite/idle/Warrior_Idle_4.png" id="5_4c57u"]
 [ext_resource type="Texture2D" uid="uid://cj8s8c2aa15jf" path="res://Sprites/Warrior/Individual Sprite/Dash/Warrior_Dash_4.png" id="5_jq2sk"]
+[ext_resource type="Resource" uid="uid://da3od85xx6dmp" path="res://Resources/Dash.tres" id="6_0rl1p"]
 [ext_resource type="Texture2D" uid="uid://dbxovbrw28i1a" path="res://Sprites/Warrior/Individual Sprite/Dash/Warrior_Dash_5.png" id="6_4k2k6"]
 [ext_resource type="Texture2D" uid="uid://ce6lel14w32s5" path="res://Sprites/Warrior/Individual Sprite/idle/Warrior_Idle_5.png" id="6_efxa6"]
 [ext_resource type="Texture2D" uid="uid://btr74jmdxxlc7" path="res://Sprites/Warrior/Individual Sprite/Dash/Warrior_Dash_6.png" id="7_0rl1p"]
@@ -369,7 +372,7 @@ tile_set = SubResource("TileSet_g4v7s")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=320301276]
 script = ExtResource("2_seu75")
-states = Array[ExtResource("3_htxhm")]([null])
+states = Array[ExtResource("3_htxhm")]([ExtResource("4_4k2k6"), ExtResource("5_0rl1p"), ExtResource("6_0rl1p")])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1858171117]
 position = Vector2(0, -17)

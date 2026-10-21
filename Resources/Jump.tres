@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="StateJump" format=3 uid="uid://b6cw6xtl3odmx"]
+
+[ext_resource type="Script" uid="uid://d0oajc3rm1gwf" path="res://Scripts/StateJump.gd" id="1_7nvl4"]
+
+[resource]
+script = ExtResource("1_7nvl4")
+metadata/_custom_type_script = "uid://d0oajc3rm1gwf"

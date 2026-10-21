@@ -11,7 +11,7 @@ func enter():
 func exit():
 	pass
 
-func _process(delta : float):
+func  process(delta : float):
 	if not character.is_on_floor():
 		character.velocity.y += gravity * delta
 	var direction := Input.get_axis("Move_Left", "Move_Right")
@@ -22,5 +22,7 @@ func _process(delta : float):
 
 func input(event: InputEvent):
 	if event is InputEventKey:
-		if event.is_action("Jump"):
+		if event.is_action_pressed("Jump"):
 			switch(StateJump.name)
+		if event.is_action_pressed("Dash"):
+			switch(StateDash.name)

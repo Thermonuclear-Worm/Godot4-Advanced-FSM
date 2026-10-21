@@ -12,7 +12,7 @@ func _ready() -> void:
 	active_state.enter()
 
 func switch_state(state_name: String):
-	active_state = states.filter(func(s): return s.name == state_name)[0]
+	active_state = state_name_dict[state_name]
 
 func _physics_process(delta: float) -> void:
 	if active_state.has_method("process"):
@@ -21,4 +21,4 @@ func _physics_process(delta: float) -> void:
 
 func _input(event: InputEvent) -> void:
 	if active_state.has_method("input"):
-		active_state.input = event
+		active_state.input(event)
