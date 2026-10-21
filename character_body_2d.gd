@@ -1,25 +1,36 @@
 extends CharacterBody2D
 
 
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
+var speed = 2000.0
+var max_speed = 150.0
+var jump_velocity = -300.0
+var gravity = 980
+var dash = 700
+var dashed = false
 
 
 func _physics_process(delta: float) -> void:
-	# Add the gravity.
 	if not is_on_floor():
-		velocity += get_gravity() * delta
-
-	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
-
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction := Input.get_axis("ui_left", "ui_right")
+		velocity.y += gravity * delta
+	elif dashed:
+		dashed = false
+	
+	var direction := Input.get_axis("Move_Left", "Move_Right")
 	if direction:
-		velocity.x = direction * SPEED
+		velocity.x = move_toward(velocity.x, max_speed * direction, speed * delta)
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-
+		velocity.x = move_toward(velocity.x, 0.0, speed * delta)
+	
 	move_and_slide()
+
+func _input(event: InputEvent) -> void:
+	if event is InputEventKey:
+		if Input.is_action_pressed("Jump") and is_on_floor():
+			velocity.y = jump_velocity
+		if Input.is_action_just_pressed("Dash") and is_on_floor() and dashed == false:
+			velocity.x = dash * int(Input.get_axis("Move_Left", "Move_Right"))
+			dashed = true
+			await get_tree().create_timer(0.2).timeout
+			max_speed = 50
+			await get_tree().create_timer(0.35).timeout
+			max_speed = 150
